@@ -11,4 +11,4 @@ rake generate:model      # Create an empty model in app/models, e.g., rake gener
 ```
 
 ### Schema
-![schema](/imgs/schema.jpg)
+![schema](/imgs/schema.JPG)
