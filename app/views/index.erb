@@ -1,0 +1,38 @@
+<h2>YAY it works</h2>
+<!-- SIGN IN -->
+<div class="container">
+  <form action="/sessions" method="post">
+    <p>
+      <label for='username'> Username: </label>
+      <input type='text' name='user[username]' required>
+    </p>
+    <p>
+      <label for='password'> Password: </label>
+      <input type='password' name='user[password]' required>
+    </p>
+
+    <p><input type='submit' value="sign in"></p>
+  </form>
+</div>
+
+<!-- NEW USER SIGN UP -->
+<div class="container">
+  <form action="/users" method="post">
+    <p>
+      <label for='username'> Username: </label>
+      <input type='text' name='user[username]'>
+    </p>
+
+    <p>
+      <label for="email">Email: </label>
+      <input type='text' name='user[email]' >
+    </p>
+
+    <p>
+      <label for='password'> Password:  </label>
+      <input type='password' name='user[password]'>
+    </p>
+
+    <p><input type='submit' value="create account"></p>
+  </form>
+</div>
