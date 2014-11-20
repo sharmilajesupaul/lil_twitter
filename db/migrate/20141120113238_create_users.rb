@@ -11,3 +11,6 @@ class CreateUsers < ActiveRecord::Migration
     end
   end
 end
+
+# User.create(username: 'ronald', email: 'ronald@example.com', hashed_password: 'password', first_name: 'ronald', last_name: 'chacon')
+
