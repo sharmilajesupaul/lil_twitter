@@ -1,0 +1,11 @@
+<div id="headerwrap">
+  <div class="container">
+    <h1>Following: </h1>
+    <h3><%= @user.username %> is following: </h3>
+    <ul>
+      <% @user.followees.each do |followee| %>
+      <li><a href='/users/<%= followee.id %>'><%= followee.username %></a></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
