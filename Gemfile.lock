@@ -30,6 +30,7 @@ GEM
       activesupport (>= 3.0.0)
     faker (1.4.3)
       i18n (~> 0.5)
+    gravatar-api (0.2.0)
     i18n (0.6.11)
     json (1.8.1)
     method_source (0.8.2)
@@ -95,6 +96,7 @@ DEPENDENCIES
   capybara
   factory_girl
   faker
+  gravatar-api
   pg
   pry
   rack-test

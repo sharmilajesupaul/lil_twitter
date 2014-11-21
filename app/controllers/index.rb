@@ -26,7 +26,7 @@ end
 
 get '/sessions/feed' do
   @user = User.find(session[:user_id])
-  @followers = @user.followers
+  @followers = @user.followees
 
   erb :"users/feed"
 end

@@ -2,7 +2,7 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-8 tweet-feed">
-          <img src="http://www.iconsdb.com/icons/download/caribbean-blue/twitter-5-512.jpg">
+          <img src="<%= gravatar_url(@user.email) %>">
         <h3><%= @user.username %>'s Tweets:</h3>
         <% @user.tweets.each do |tweet| %>
           <div class='container'>
