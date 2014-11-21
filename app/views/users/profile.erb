@@ -3,7 +3,8 @@
       <div class="row">
         <div class="col-sm-8 tweet-feed">
           <img src="<%= gravatar_url(@user.email) %>">
-        <h3><%= @user.username %>'s Tweets:</h3>
+          <h4>Tweets: <%= @user.tweets.count %>&nbsp;  Followers: <%= @user.followers.count %>&nbsp;  Following: <%= @user.followees.count %></h4>
+        <h3><%= @user.username %>'s Tweets: </h3>
         <% @user.tweets.each do |tweet| %>
           <div class='container'>
             <p><%= tweet.content %></p>
@@ -19,9 +20,11 @@
           <button type='submit' class="btn btn-primary">Tweet!</button>
         </form>
         <br>
-        <form action="/users/<%= @user.id %>/follow" method="post">
-          <button type="submit" class="btn btn-primary">Follow <%= @user.username %></button>
-        </form>
+        <% if @user.id != session[:user_id] %>
+          <form action="/users/<%= @user.id %>/follow" method="post">
+            <button type="submit" class="btn btn-primary">Follow <%= @user.username %></button>
+          </form>
+        <% end %>
       </div>
     </div>
   </div>
