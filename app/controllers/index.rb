@@ -25,7 +25,37 @@ get "/session_view" do
   erb :session_view
 end
 
+get '/feed' do
+
+  erb :"users/feed"
+end
+
+get '/profile' do
+
+  erb :"users/profile"
+end
+
+get '/users/:id/following' do
+  @user = User.find(params[:id])
+
+  erb :"users/following"
+end
+
+get '/users/:id/followers' do
+  @user = User.find(params[:id])
+
+  erb :"users/followers"
+end
+
 post '/users' do
   User.create(params[:user])
   redirect "/"
 end
+
+post '/tweets' do
+  Tweet.create(params[:tweet])
+
+  redirect '/feed'
+end
+
+
