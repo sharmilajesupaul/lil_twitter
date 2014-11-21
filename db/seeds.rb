@@ -6,12 +6,12 @@ jarred = User.create(username: "jarred", email: "jarredhare@gmail.com", password
 brick = User.create(username: "brick", email: "brick@devbootcamp.com", password: 'password')
 chris = User.create(username: 'chris', email: "christophermamian@gmail.com", password: 'password')
 han = User.create(username: 'han', email: "hankim813@gmail.com", password: 'password')
+ryan = User.create(username: 'ryan', email: "whileyryan@gmail.com", password: 'password')
+ronald.followers << [sharmila, neil, jarred, brick, chris, han, ryan]
+jarred.followers << [sharmila, neil, ronald, brick, chris, han, ryan]
+sharmila.followers << [jarred, neil, ronald, brick, chris, han, ryan]
 
-ronald.followers << [sharmila, neil, jarred, brick, chris, han]
-jarred.followers << [sharmila, neil, ronald, brick, chris, han]
-sharmila.followers << [jarred, neil, ronald, brick, chris, han]
-
-us = [jarred, neil, ronald, brick, chris, han, sharmila]
+us = [jarred, neil, ronald, brick, chris, han, sharmila, ryan]
 
 5.times do
   us.each do |person|
