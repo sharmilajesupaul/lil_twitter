@@ -17,6 +17,10 @@
           </div>
           <button type='submit' class="btn btn-primary">Tweet!</button>
         </form>
+        <br>
+        <form action="/users/<%= @user.id %>/follow" method="post">
+          <button type="submit" class="btn btn-primary">Follow <%= @user.username %></button>
+        </form>
       </div>
     </div>
   </div>

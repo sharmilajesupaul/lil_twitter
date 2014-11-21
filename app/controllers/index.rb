@@ -69,6 +69,15 @@ post '/tweets' do
   redirect "/sessions/feed"
 end
 
+######## Follow #########
+post '/users/:id/follow' do
+  @user = User.find(params[:id])
+  @logged_in_user = User.find(session[:user_id])
+
+        @user.followers << @logged_in_user if session[:user_id]
+
+  redirect "/"
+end
 
 
 

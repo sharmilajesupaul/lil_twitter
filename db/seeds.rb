@@ -10,7 +10,5 @@ end
 
 
 User.all.each do |user|
-  array = User.all
-  array.delete(user)
-  user.followers << array.sample(3)
+  user.followers << User.all.sample(3)
 end
