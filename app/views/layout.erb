@@ -29,12 +29,17 @@
             <span class="icon-bar"></span>
           </button>
           <a class="navbar-brand" href="/"><b>Lil' Twitter</b></a>
+
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
             <% if session[:user_id] %>
+              <a class="navbar-brand" href="/users/<%= session[:user_id] %>"><b><%= User.find(session[:user_id]).username %></b></a>
+            <% end %>
+            <% if session[:user_id] %>
               <li><a href="/logout">Logout</a></li>
             <% end %>
+
           </ul>
         </div><!--/.nav-collapse -->
       </div>
