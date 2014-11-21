@@ -1,5 +1,9 @@
 get "/" do
-  erb :index
+  if session[:user_id]
+    redirect "/sessions/feed"
+  else
+    erb :index
+  end
 end
 
 ###### Sessions ######
@@ -14,7 +18,7 @@ post "/sessions" do
   end
 end
 
-delete '/sessions/:id' do
+get '/logout' do
   session.clear
 
   redirect "/"
