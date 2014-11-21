@@ -1,7 +1,7 @@
 <div id="headerwrap">
   <div class="container">
     <div class="row">
-      <div class="col-sm-8" style="background-color: rgba(0, 0, 0, 0.55)">
+      <div class="col-sm-8 tweet-feed">
         <h3>Feed</h3>
           <% @user.tweets.each do |tweet| %>
             <%= erb :_tweet, locals: {tweet: tweet} %>
