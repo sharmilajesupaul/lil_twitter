@@ -1,5 +1,4 @@
 <div class='container'>
   <p><%= tweet.content %></p>
-  <p><a href="/users/<%=tweet.user.id%>"><%= tweet.user.username %></a></p>
-  <p><% p tweet.user.username %></p>
+  <p><img src="<%= gravatar_url(tweet.user.email) %>" id="tweet_img">&nbsp;&nbsp;&nbsp;<a href="/users/<%=tweet.user.id%>"><%= tweet.user.username %></a></img> | at: <%= tweet.created_at %></p>
 </div>
