@@ -3,26 +3,29 @@ get "/" do
 end
 
 ###### Sessions ######
-get "/sessions/new" do
-  erb :sign_in
-end
-
 post "/sessions" do
-
- # redirect to feed
+  if @user = User.find_by(username: params[:user][:username])
+    if @user.authenticate(params[:user][:password])
+      session[:user_id] = @user.id
+      redirect "/feed"
+    end
+  else
+    redirect "/"
+  end
 end
 
 delete '/sessions/:id' do
+  session.clear
+
   redirect "/"
 end
 
-##### Users ########
-get '/users/new' do
-  # render sign-up page
-
-  erb ':/users/new'
+##### Users #######
+get "/session_view" do
+  erb :session_view
 end
 
 post '/users' do
-  # sign-up a new user
+  User.create(params[:user])
+  redirect "/"
 end
