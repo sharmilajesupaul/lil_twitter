@@ -10,5 +10,8 @@ end
 
 
 User.all.each do |user|
-  user.followers << User.all.sample(3)
+  3.times do
+    new_follower = User.all.sample
+    user.followers << new_follower unless new_follower == user
+  end
 end
