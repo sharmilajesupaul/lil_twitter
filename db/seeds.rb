@@ -8,11 +8,9 @@ require 'faker'
   # user.followers.create(username: Faker::Internet.user_name)
 end
 
+
 User.all.each do |user|
-  user.followers << User.all.sample(3)
+  array = User.all
+  array.delete(user)
+  user.followers << array.sample(3)
 end
-
-
-
-
-#tweets
