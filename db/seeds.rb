@@ -2,8 +2,8 @@ require 'faker'
 
 10.times do |user|
 
-  user = User.create(username: Faker::Internet.user_name)
-  tweet = user.tweets.create(content: Faker::Hacker.say_something_smart)
+  user = User.create(username: Faker::Internet.user_name, password: 'password')
+  3.times { user.tweets.create(content: Faker::Hacker.say_something_smart) }
   # user.followers.create(username: Faker::Internet.user_name)
   # user.followers.create(username: Faker::Internet.user_name)
 end

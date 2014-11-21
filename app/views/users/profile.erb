@@ -1,0 +1,22 @@
+  <div id="headerwrap">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8">
+        <% @user.tweets.each do |tweet| %>
+          <div class='container'>
+            <p><%= tweet.content %></p>
+          </div>
+        <% end %>
+      </div>
+      <div class="col-sm-4">
+        <form action="/tweets" method="post" role="form">
+          <div class="form-group">
+            <label for="content">New Tweet: </label>
+            <textarea type="text" class="form-control" name='tweet[content]' placeholder="cool shit" rows='5' cols='10' required></textarea>
+          </div>
+          <button type='submit' class="btn btn-primary">Tweet!</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

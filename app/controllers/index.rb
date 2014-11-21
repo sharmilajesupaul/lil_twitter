@@ -7,7 +7,7 @@ post "/sessions" do
   if @user = User.find_by(username: params[:user][:username])
     if @user.authenticate(params[:user][:password])
       session[:user_id] = @user.id
-      redirect "/feed"
+      redirect "/sessions/feed"
     end
   else
     redirect "/"
@@ -20,17 +20,23 @@ delete '/sessions/:id' do
   redirect "/"
 end
 
-##### Users #######
-get "/session_view" do
-  erb :session_view
-end
-
-get '/feed' do
+get '/sessions/feed' do
+  @user = User.find(session[:user_id])
+  @followers = @user.followers
 
   erb :"users/feed"
 end
 
-get '/profile' do
+get "/session_view" do
+  erb :session_view
+end
+
+
+##### Users #######
+
+# your own tweets should be in your tweet
+get '/users/:id' do
+  @user = User.find(params[:id])
 
   erb :"users/profile"
 end
@@ -53,9 +59,10 @@ post '/users' do
 end
 
 post '/tweets' do
-  Tweet.create(params[:tweet])
+  @user = User.find(session[:user_id])
+  @user.tweets << Tweet.create(params[:tweet])
 
-  redirect '/feed'
+  redirect "/sessions/feed"
 end
 
 
