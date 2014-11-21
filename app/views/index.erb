@@ -1,38 +1,45 @@
-<h2>YAY it works</h2>
-<!-- SIGN IN -->
-<div class="container">
-  <form action="/sessions" method="post">
-    <p>
-      <label for='username'> Username: </label>
-      <input type='text' name='user[username]' required>
-    </p>
-    <p>
-      <label for='password'> Password: </label>
-      <input type='password' name='user[password]' required>
-    </p>
+  <div id="headerwrap">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8">
+          <h1>Make your landing page<br/>
+          look really good.</h1>
+        </div><!-- /col-lg-6 -->
+        <div class="col-lg-4">
+          <!-- SIGN IN -->
+          <h3>Login</h3>
+          <form action="/sessions" method="post" role="form">
+            <div class="form-group">
+              <label for="username">Username: </label>
+              <input type="text" class="form-control" name='user[username]' placeholder="Username" required>
+            </div>
+            <div class="form-group">
+              <label for="password">Password: </label>
+              <input type="password" class="form-control" name='user[password]' placeholder="password" required>
+            </div>
+            <button type='submit' class="btn btn-primary">Sign In</button>
+          </form>
 
-    <p><input type='submit' value="sign in"></p>
-  </form>
-</div>
+          <!-- NEW USER SIGN UP -->
+          <h3>Create New Account</h3>
+          <form action="/users" method="post" role="form">
+            <div class="form-group">
+              <label for="username">Username: </label>
+              <input type="text" class="form-control" name='user[username]' placeholder="Username" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email: </label>
+              <input type="email" class="form-control" name='user[email]' placeholder="Email" required>
+            </div>
+            <div class="form-group">
+              <label for="password">Password: </label>
+              <input type="password" class="form-control" name='user[password]' placeholder="password" required>
+            </div>
+            <button type='submit' class="btn btn-primary">Sign In</button>
+          </form>
+          <br>
+        </div><!-- /col-lg-6 -->
 
-<!-- NEW USER SIGN UP -->
-<div class="container">
-  <form action="/users" method="post">
-    <p>
-      <label for='username'> Username: </label>
-      <input type='text' name='user[username]'>
-    </p>
-
-    <p>
-      <label for="email">Email: </label>
-      <input type='text' name='user[email]' >
-    </p>
-
-    <p>
-      <label for='password'> Password:  </label>
-      <input type='password' name='user[password]'>
-    </p>
-
-    <p><input type='submit' value="create account"></p>
-  </form>
-</div>
+      </div><!-- /row -->
+    </div><!-- /container -->
+  </div><!-- /headerwrap -->
