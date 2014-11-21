@@ -4,9 +4,7 @@
       <div class="col-sm-8" style="background-color: rgba(0, 0, 0, 0.55)">
         <h3>Feed</h3>
           <% @user.tweets.each do |tweet| %>
-            <div class='container'>
-              <p><%= tweet.content %></p>
-            </div>
+            <%= erb :_tweet, locals: {tweet: tweet} %>
           <% end %>
           <% @followers.each do |follower|  %>
             <% follower.tweets.each do |tweet| %>
