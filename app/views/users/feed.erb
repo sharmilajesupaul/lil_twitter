@@ -8,9 +8,7 @@
           <% end %>
           <% @followers.each do |follower|  %>
             <% follower.tweets.each do |tweet| %>
-              <div class='container'>
-                <p><%= tweet.content %></p>
-              </div>
+               <%= erb :_tweet, locals: {tweet: tweet} %>
             <% end %>
           <% end %>
       </div>
