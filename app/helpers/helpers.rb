@@ -10,4 +10,8 @@ helpers do
   def tweet_sorter(tweets)
     tweets.sort_by { |tweet| tweet.created_at  }.reverse
   end
+
+  def date_format(date)
+    date.strftime("%B %d %Y at %I:%M%p")
+  end
 end
