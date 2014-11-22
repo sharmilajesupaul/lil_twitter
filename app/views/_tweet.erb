@@ -1,4 +1,6 @@
 <div class='container'>
+  <div style="background:rgba(113, 97, 97, 0.75); width:63%;">
   <p><%= tweet.content %></p>
-  <p><img src="<%= gravatar_url(tweet.user.email) %>" id="tweet_img">&nbsp;&nbsp;&nbsp;<a href="/users/<%=tweet.user.id%>"><%= tweet.user.username %></a></img> | at: <%= tweet.created_at %></p>
+  <p><img src="<%= gravatar_url(tweet.user.email) %>" id="tweet_img">&nbsp;&nbsp;&nbsp;<a href="/users/<%=tweet.user.id%>"><%= tweet.user.username %></a></img> | <%= date_format(tweet.created_at) %></p>
+  </div>
 </div>
