@@ -1,0 +1,29 @@
+  <div id="headerwrap">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8 tweet-feed">
+          <img src="<%= gravatar_url(@user.email) %>">
+          <h4>Tweets: <%= @user.tweets.count %>&nbsp;  <a href="/users/<%= @user.id %>/followers">Followers:</a> <%= @user.followers.count %>&nbsp;  <a href="/users/<%= @user.id %>/following">Following:</a> <%= @user.followees.count %></h4>
+        <h3><%= @user.username %>'s Tweets: </h3>
+          <% tweet_sorter(@user.tweets).each do |tweet| %>
+            <%= erb :_tweet, locals: {tweet: tweet} %>
+          <% end %>
+      </div>
+      <div class="col-sm-4">
+        <form action="/tweets" method="post" role="form">
+          <div class="form-group">
+            <label for="content">New Tweet: </label>
+            <textarea type="text" class="form-control" name='tweet[content]' placeholder="cool shit" rows='5' cols='10' required></textarea>
+          </div>
+          <button type='submit' class="btn btn-primary">Tweet!</button>
+        </form>
+        <br>
+        <% if @user.id != session[:user_id] %>
+          <form action="/users/<%= @user.id %>/follow" method="post">
+            <button type="submit" class="btn btn-primary">Follow <%= @user.username %></button>
+          </form>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

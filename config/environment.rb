@@ -14,11 +14,14 @@ require 'pathname'
 require 'pg'
 require 'active_record'
 require 'logger'
-
+require 'pry'
 require 'sinatra'
 require "sinatra/reloader" if development?
-
+require 'gravatar-api'
 require 'erb'
+require 'bcrypt'
+require 'digest/md5'
+
 
 # Some helper constants for path-centric logic
 APP_ROOT = Pathname.new(File.expand_path('../../', __FILE__))
