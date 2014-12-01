@@ -1,0 +1,12 @@
+<div id="headerwrap">
+  <div class="container tweet-feed">
+    <h1>Followers: </h1>
+    <h3><%= @user.username %>'s followers: </h3>
+    <ul>
+    <% @user.followers.each do |follower| %>
+    <li><a href='/users/<%= follower.id %>'><%= follower.username %></a></li>
+    <% end %>
+    </ul>
+  </div>
+</div>
+

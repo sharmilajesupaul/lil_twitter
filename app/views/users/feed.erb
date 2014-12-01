@@ -1,0 +1,25 @@
+<div id="headerwrap">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-8 tweet-feed">
+        <h3>Feed</h3>
+          <% tweet_sorter(@user.tweets).each do |tweet| %>
+            <%= erb :_tweet, locals: {tweet: tweet} %>
+          <% end %>
+          <% @followers.each do |follower|  %>
+            <% tweet_sorter(follower.tweets).each do |tweet| %>
+              <%= erb :_tweet, locals: {tweet: tweet} %>
+            <% end %>
+          <% end %>
+      </div>
+      <div class="col-sm-4">
+        <form action="/tweets" method="post" role="form">
+          <div class="form-group">
+            <label for="content">New Tweet: </label>
+            <textarea type="text" class="form-control" name='tweet[content]' placeholder="cool shit" rows='5' cols='10' required></textarea>
+          </div>
+          <button type='submit' class="btn btn-primary">Tweet!</button>
+        </form>
+      </div>
+    </div>
+  </div>
