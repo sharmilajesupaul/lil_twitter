@@ -1,3 +1,6 @@
+Lil Twitter - another Twitter Clone
+====================
+
 ### Quickstart
 
 1.  `bundle install`
